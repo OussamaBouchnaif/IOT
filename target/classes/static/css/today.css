@@ -1,0 +1,68 @@
+
+.widget {
+    display: inline-block;
+    box-sizing: content-box;
+    width: 228px;
+    padding: 40px;
+    border-radius: 6px;
+    background-color: #fff;
+    box-shadow: 0 0 15px #ddd;
+}
+
+
+.icon {
+    font-family: 'FontAwesome';
+    float: right;
+}
+.widget > div {
+    font-weight: 300;
+    bottom: 36px;
+    color: #b8b8b8;
+}
+.degree {
+    font-size: 4em;
+}
+
+.degree2 {
+    font-size: 2em;
+}
+.country {
+    margin-top: 10px;
+    font-size: 2em;
+    line-height: 10px;
+    color: #cbcbcb;
+}
+.fa-thermometer-empty {
+    animation: vibrator 0.5s infinite linear;
+}
+
+.fa-tint {
+    animation: upAndDown 1s infinite linear;
+}
+
+@keyframes vibrator {
+    0% {
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(-15px);
+    }
+    50% {
+        transform: translateY(0);
+    }
+    75% {
+        transform: translateY(15px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes upAndDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-100px);
+    }
+}

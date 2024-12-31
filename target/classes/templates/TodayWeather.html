@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="template">
+<head>
+    <meta charset="UTF-8">
+    <title>Donnée d'Aujourd'hui</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="container-fluid px-4">
+        <h1 class="mt-4">Temperature d'aujourd'hui</h1>
+        <div class="card mb-4">
+            <h3 class="card-body">
+                Les Données de le dernier enregistrement
+            </h3>
+        </div>
+        <div class='wrapper d-flex justify-content-center' >
+            <div class='widget' style='margin-right: 31px;'>
+                <i class='fa fa-4x fa-thermometer-empty icon' style='color: #FFA500;'></i>
+                <div th:if="${Weather!=null}">
+                    <div class='degree'th:text="${Weather.temperature}"></div>
+                    <div class='country'>Température</div>
+                </div>
+                <div th:else>
+                    <div class='degree2'>Aucune donnée</div>
+                    <div class='country'>Température</div>
+                </div>
+            </div>
+            <div class='widget' style='margin-right: 31px;'>
+                <i class='fa fa-4x fa-tint icon' style='color: #82b2e4;'></i>
+                <div th:if="${Weather!=null}">
+                    <div class='degree' th:text="${Weather.humidite}"></div>
+                    <div class='country'>Humidité</div>
+                </div>
+                <div th:else>
+                    <div class='degree2'>Aucune donnée</div>
+                    <div class='country'>Humidité</div>
+                </div>
+            </div>
+            <div class='widget'>
+                <i class='fa fa-4x fa-calendar icon' style='color: darkgoldenrod;'></i>
+                <div th:if="${date!=null && time!=null}">
+                    <div class='degree2' th:text="${date}"></div>
+                    <div class='degree2' th:text="${time}"></div>
+                    <div class='country'>Date</div>
+                </div>
+                <div th:else>
+                    <div class='degree2'>Aucune donnée</div>
+                    <div class='country'>Date</div>
+                </div>
+            </div>
+        </div>
+</div>
+</div>
+</body>
+</html>
